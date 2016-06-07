@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularMVCFileUpload", "AngularMVCFileUpload\AngularMVCFileUpload.csproj", "{AD814E1D-9BD6-4436-82BC-901D6210DFE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD814E1D-9BD6-4436-82BC-901D6210DFE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD814E1D-9BD6-4436-82BC-901D6210DFE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD814E1D-9BD6-4436-82BC-901D6210DFE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD814E1D-9BD6-4436-82BC-901D6210DFE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<script src="../../Script/angular.js" type="text/javascript"></script>
+<script src="../../Script/angular-upload.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var app = angular.module('myApp', ['lr.upload']);
+
+    app.controller('HomeCtrl', ['$scope', 'upload', '$http', function ($scope, upload, $http) {
+       
+        $scope.doUpload = function () {
+
+            upload({
+                url: 'Home/upload',
+                method: 'POST',
+                data: {
+                    aFile: $scope.myFile
+                }
+            }).then(
+              function (response) {
+                  console.log(response.data);
+              },
+              function (response) {
+                  console.error(response);
+              }
+            );
+
+        }
+
+
+    } ])
+
+
+      .directive('uploadFile', ['$parse', function ($parse) {
+          return {
+              restrict: 'A',
+              link: function (scope, element, attrs) {
+
+                  var file_uploaded = $parse(attrs.uploadFile);
+
+                  element.bind('change', function () {
+                      scope.$apply(function () {
+                          file_uploaded.assign(scope, element[0].files[0]);
+                      });
+                  });
+              }
+          };
+      } ]);
+
+</script>
+<div ng-app="myApp">
+    <div ng-controller="HomeCtrl">
+        <input name="myFile" upload-file="myFile" type="file" />
+        <input type="button" ng-click="doUpload()" text="Upload" />
+    </div>
+</div>
